@@ -12,17 +12,18 @@ public:
     static int strStr(string haystack, string needle) {
         int pointer = 0;
 
+
         for (int i = 0; i < haystack.size(); i++)
         {
-            if (haystack[i] == needle[pointer])
+            if (haystack.substr(i, needle.size()) == needle)
             {
-                for (int i = 0; i < haystack.size(); i++)
-                {
-
-                }
+                return i;
             }
+           
         }
+        return -1;
     }
+
 };
 
 
@@ -30,8 +31,8 @@ public:
 
 int main()
 {
-    string input = "sadbutsad";
-    string aim = "but";
+    string input = "mississippi";
+    string aim = "ppi";
     cout << Solution::strStr(input, aim);
 
     return 0;
